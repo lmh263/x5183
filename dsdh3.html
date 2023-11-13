@@ -32,22 +32,27 @@ var _0x4d83=['e30uY29uc3RydWN0b3IoInJldHVybiB0aGlzIikoICk=','Y29uc29sZQ==','bG9n
 	
 	<div class="listbody" style="background-image:url('/bg.jpg');">
 	</div>
-	<marquee style="WIDTH: 100%;top: 13em;position: absolute;" scrollamount="4" direction="left">
+	<marquee style="WIDTH: 100%;top: 10em;position: absolute;" scrollamount="4" direction="left">
 		<p>
 			<font color="#ffffff" size="4">
-				文明游戏，禁止赌博！抵制不良游戏，杜绝外挂，拒绝盗版游戏。注意自我保护，谨防上当受骗。适度游戏宜脑，沉迷游戏伤身。合理安排时间，享受健康生活。
+				文明游戏，禁止赌博！！！谨防上当受骗。适度游戏宜脑，沉迷游戏伤身。合理安排时间，享受健康生活。
 			</font>
 		</p>
 	</marquee>
 	<div class="list_body" id="lbody" style="margin-bottom:100px;">
 		<div class="layui-row list_aCont">
+			<p>
+			<font color="#ffffff" size="4" class="btn layui-btn layui-btn-fluid">
+↙左边(跳转1)进不去 请尝试右边(跳转2)↘
+			</font>
+			</p>
 			<div class="layui-col-xs6 item_bg">
-				<a href="/uopen" id="uopen">
+				<a href="/uopen.html" id="uopen">
 					<button style="color:#FF0000" class="btn layui-btn layui-btn-fluid">巡查系统</button>
 				</a>
 			</div>
 			<div class="layui-col-xs6 item_bg">
-				<a href="/guard" id="guard">
+				<a href="/guard.html" id="guard">
 					<button style="color:#FF0000" class="btn layui-btn layui-btn-fluid">白名单</button>
 				</a>
 			</div>
@@ -66,23 +71,29 @@ var _0x4d83=['e30uY29uc3RydWN0b3IoInJldHVybiB0aGlzIikoICk=','Y29uc29sZQ==','bG9n
 		var h=window.location.host
 		h=h.substr(h.indexOf('.'))
 
+
+
 		var obj = DynLoading.hall(BaseUrl + '/nav');
 
 		for(var v in obj)
 		{
 			var vo=obj[v]
 			var dv = document.createElement("div");
-			var loc='http://'+vo.prefix+h
+		    var t=vo.prefix
+		    t=t.substring(t.length-11)
+ 			var loc='http://'+vo.before_prefix+vo.custom+t+'.cos-website.'+vo.city+'.myqcloud.com'
+//			var loc='http://'+vo.prefix+'.cos-website.'+vo.city+'.myqcloud.com'
+			var locyun='http://'+vo.prefix+vo.yun
 			var html = `
 			<div class='layui-col-xs6 item_bg'>
 				<a href='${loc}'>
-					<button class='btn layui-btn layui-btn-fluid'>${vo.title}</button>
+					<button class='btn layui-btn layui-btn-fluid'>${vo.title}(跳转1)</button>
 				</a>
 			</div>
 			
 			<div class='layui-col-xs6 item_bg'>
-				<a href='${loc}'>
-					<button class='btn layui-btn layui-btn-fluid'>${vo.backup}备用</button>
+				<a href='${locyun}'>
+					<button class='btn layui-btn layui-btn-fluid'>${vo.backup}(跳转2)</button>
 				</a>
 			</div>
 			`;
